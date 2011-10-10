@@ -9,9 +9,16 @@
             $(document).ready(function(){
                 $("#treeViewDiv").jstree({
                     "json_data" : {
-                        
+                        "data":[
+                            {
+                                "data" : "Search engines"
+                            },
+                            {
+                                "data" : "Networking sites"
+                            }
+                        ]
                     },
-                    "plugins" : []
+                    "plugins" : [ "themes", "json_data", "ui" ]
                 });
             });
         </script>
