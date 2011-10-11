@@ -28,7 +28,17 @@
                         ]
                     },
                     "plugins" : [ "themes", "json_data", "ui" ]
-                });
+                }).bind("select_node.jstree", function(e, data)
+                    {
+                        if(jQuery.data(data.rslt.obj[0], "href"))
+                        {
+                            window.location=jQuery.data(data.rslt.obj[0], "href");
+                        }
+                        else
+                        {
+                            alert("No href defined for this element");
+                        }
+                    })
             });
         </script>
     </head>
