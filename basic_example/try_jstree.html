@@ -27,7 +27,38 @@
                             }
                         ]
                     },
-                    "plugins" : [ "themes", "json_data", "ui" ]
+		    "themes" :
+		    {
+			"theme":"apple",
+		    },
+		    /*"types" :
+		    {
+			"default":
+			{
+				"icon":
+				{
+					"image":"http://static.jstree.com/v.1.0rc/_docs/_drive.png"
+				}
+			}
+		    },*/
+			
+			"types" : {
+    "valid_children" : [ "folder" ],
+    "types" : {
+        "folder" : {
+            "valid_children" : [ "file" ],
+            "icon" : { "image" : "/home/akshar/rajesh1.jpg"},
+            "max_depth" : 1
+        },
+
+        "file" : {
+            "valid_children" : [ "none" ],
+            "icon" : { "image" : "/path/to/images/file.png" },
+        }
+    }
+},		
+		
+                    "plugins" : [ "themes", "json_data", "ui", "types",]
                 }).bind("select_node.jstree", function(e, data)
                     {
                         if(jQuery.data(data.rslt.obj[0], "href"))
@@ -46,4 +77,8 @@
         <div id="treeViewDiv">
         </div>
     </body>
+<script type="text/javscript">
+	$(document).ready(function(){
+	});
+</script>
 </html>
